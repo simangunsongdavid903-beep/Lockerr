@@ -1,0 +1,23 @@
+{
+  "name": "smart-locker",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Smart Locker berbasis IoT dengan autentikasi KTP dan PIN",
+  "workspaces": [
+    "packages/shared",
+    "backend",
+    "apps/admin",
+    "apps/konsumen"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev:backend": "npm run dev -w backend",
+    "dev:admin": "npm run dev -w @smart-locker/admin",
+    "dev:konsumen": "npm run dev -w @smart-locker/konsumen",
+    "build": "npm run build -w @smart-locker/admin && npm run build -w @smart-locker/konsumen",
+    "test": "npm test -w backend",
+    "migrate": "npm run migrate -w backend"
+  }
+}
